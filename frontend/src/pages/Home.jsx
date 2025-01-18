@@ -18,9 +18,10 @@ const Home = () => {
     setLoading(true);
 
     // Production API URL for the backend deployed on Vercel
+    const API_URL = 'https://book-store-mern-stack-qzrz.vercel.app';
 
     axios
-      .get(`/books`)
+      .get(`${API_URL}/books`)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
