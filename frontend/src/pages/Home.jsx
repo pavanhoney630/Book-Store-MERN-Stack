@@ -18,7 +18,7 @@ const Home = () => {
     setLoading(true);
 
     // Production API URL for the backend deployed on Vercel
-    const API_URL = 'https://final-project-three-beige.vercel.app';
+    const API_URL = 'https://book-store-mern-stack-zeta.vercel.app';
 
     axios
       .get(`${API_URL}/books`)
@@ -31,7 +31,7 @@ const Home = () => {
         setLoading(false);
       });
   }, []);
-  
+
   return (
     <div className='p-4'>
       <div className='flex justify-center items-center gap-x-4'>
