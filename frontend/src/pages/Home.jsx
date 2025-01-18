@@ -13,10 +13,15 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState('table');
 
+  
   useEffect(() => {
     setLoading(true);
+
+    // Production API URL for the backend deployed on Vercel
+    const API_URL = 'https://final-project-three-beige.vercel.app';
+
     axios
-      .get('http://localhost:5555/books')
+      .get(`${API_URL}/books`)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
@@ -26,7 +31,7 @@ const Home = () => {
         setLoading(false);
       });
   }, []);
-
+  
   return (
     <div className='p-4'>
       <div className='flex justify-center items-center gap-x-4'>
