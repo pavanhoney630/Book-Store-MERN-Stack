@@ -9,13 +9,7 @@ const app = express();
 // Middleware for parsing request body
 app.use(express.json());
 
-
-
-app.use(cors({
-  origin: '*',  // Allow all domains
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
-}));
+app.use(cors());
 
 app.get('/', (request, response) => {
   console.log(request);
