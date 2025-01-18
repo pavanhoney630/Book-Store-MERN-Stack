@@ -20,7 +20,7 @@ const Home = () => {
     // Production API URL for the backend deployed on Vercel
 
     axios
-      .get(`https://book-store-mern-stack-qzrz.vercel.app/books`)
+      .get(`/books`)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
