@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "private": true,
-  "proxy": "https://book-store-mern-stack-zeta.vercel.app",
+  "proxy": "https://book-store-mern-stack-37n2wjpck.vercel.app",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
