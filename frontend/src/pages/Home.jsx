@@ -13,12 +13,12 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState('table');
   
-
+const Backend_URL = "https://book-store-mern-stack-api-pi.vercel.app";
   
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://book-store-mern-stack-api-pi.vercel.app/books',{
+      .get(`${Backend_URL}/books`,{
          withCredentials: true,
       })
       .then((response) => {
