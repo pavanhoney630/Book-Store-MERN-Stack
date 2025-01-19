@@ -10,11 +10,12 @@ const DeleteBook = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
+  axios.defaults.withCredentials = true;
 
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`${API_URL}/books/${id}`)
+      .delete(`/books/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Deleted successfully', { variant: 'success' });

@@ -12,16 +12,13 @@ const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState('table');
+  axios.defaults.withCredentials = true;
 
   
   useEffect(() => {
     setLoading(true);
-
-    // Production API URL for the backend deployed on Vercel
-    const API_URL = 'https://book-store-mern-stack-qzrz.vercel.app';
-
     axios
-      .get(`${API_URL}/books`)
+      .get('/books')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
