@@ -13,7 +13,7 @@ const EditBook = () => {
   const navigate = useNavigate();
   const {id} = useParams();
   const { enqueueSnackbar } = useSnackbar();
- axios.defaults.withCredentials = true;
+ 
   useEffect(() => {
     setLoading(true);
     axios.get(`https://book-store-mern-stack-api-pi.vercel.app/books/${id}`)
