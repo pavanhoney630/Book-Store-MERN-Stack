@@ -44,6 +44,9 @@ router.get('/', async (request, response) => {
     response.status(500).send({ message: error.message });
   }
 });
+router.options('/', (req, res) => {
+  res.sendStatus(204); // No content needed for preflight
+});
 
 // Route for Get One Book from database by id
 router.get('/:id', async (request, response) => {
