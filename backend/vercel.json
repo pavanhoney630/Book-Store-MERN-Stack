@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/books",
-      "dest": "/backend/index.js",
+      "src": "/(.*)",
+      "dest": "/",
       "headers": {
         "Access-Control-Allow-Origin": "https://book-store-mern-stack-frontend-seven.vercel.app",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
