@@ -10,18 +10,17 @@ const app = express();
 // Middleware for parsing request body
 app.use(express.json());
 
-const corsOptions = { origin: URL, 
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], 
-  allowedHeaders: ['Content-Type', 'Authorization'], // Specify the allowed headers
- 
-  }; 
- 
- app.use(cors(corsOptions));
-
-app.get('/', (request, response) => {
-  console.log(request);
-  return response.status(234).send('Welcome To MERN Stack Tutorial');
-});
+const corsOptions = {
+  origin: URL,
+   
+ methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'] 
+ }; app.use(cors(corsOptions)); app.use(express.json());
+  app.get('/', (req, res) => { res.send('Hello World'); 
+ }); 
+  app.get("/books",(req,res)=>{
+    res.json({message:"books endpoint"})
+  });
 
 
 app.use('/books', booksRoute);
