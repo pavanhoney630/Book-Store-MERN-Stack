@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin:["https://book-store-mern-stack-frontend-seven.vercel.app/"],
+    origin:["https://book-store-mern-stack-frontend-seven.vercel.app"],
     method:["POST","GET","PUT","DELETE"],
     credentials: true
   }
