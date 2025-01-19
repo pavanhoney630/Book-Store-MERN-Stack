@@ -16,11 +16,10 @@ const corsOptions = {
  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
   allowedHeaders: ['Content-Type', 'Authorization'] 
  }; app.use(cors(corsOptions)); app.use(express.json());
+ app.options('*', cors(corsOptions));
   app.get('/', (req, res) => { res.send('Hello World'); 
  }); 
-  app.get("/books",(req,res)=>{
-    res.json({message:"books endpoint"})
-  });
+  
 
 
 app.use('/books', booksRoute);
