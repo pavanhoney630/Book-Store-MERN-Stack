@@ -3,6 +3,7 @@ import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
 import cors from 'cors';
+import serverless from 'serverless-http';
 
 const app = express();
 
@@ -45,3 +46,4 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
+  export const handler = serverless(app);
