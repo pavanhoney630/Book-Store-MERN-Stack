@@ -16,7 +16,7 @@ const EditBook = () => {
  axios.defaults.withCredentials = true;
   useEffect(() => {
     setLoading(true);
-    axios.get(`/books/${id}`)
+    axios.get(`https://book-store-mern-stack-api-pi.vercel.app/books/${id}`)
     .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear)
@@ -37,7 +37,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`/books/${id}`, data)
+      .put(`https://book-store-mern-stack-api-pi.vercel.app/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });
